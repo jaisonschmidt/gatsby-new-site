@@ -18,14 +18,6 @@ export default ({ data }) => {
     <LayoutDefault>
       <SEO title="Home" description="breve descrição da página" />
       <p>Home</p>
-      <img src="https://via.placeholder.com/400x200" alt="" />
-
-      {posts.map((post, i) => (
-        <div key={i}>
-          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
-          <div>{post.node.frontmatter.date}</div>
-        </div>
-      ))}
     </LayoutDefault>
   )
 }

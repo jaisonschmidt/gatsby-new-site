@@ -1,0 +1,6 @@
+{posts.map((post, i) => (
+        <div key={i}>
+          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
+          <div>{post.node.frontmatter.date}</div>
+        </div>
+      ))}

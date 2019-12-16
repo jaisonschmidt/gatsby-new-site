@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Pandas Eating Lots`,
-    description: `A simple description about pandas eating lots...`,
+    title: `Jaison Schmidt - Dev Front End :-)`,
+    description: `Em meu site você vai encontrar informações sobre tecnologia, tutoriais, videoaulas, estudos dirigidos e um pouco sore meu portfolio.`,
     author: `gatsbyjs`,
   },
   plugins: [
