@@ -1,27 +1,33 @@
 // https://lmpixels.com/demo/kerge-html/version-1/#about-me
 
-// TODO Criar LayoutDefault - menu lateral e central
-// TODO criar paginas - home, notepad, guidedstudies, videos , about
-// TODO implementar transição entre as páginas
-// TODO
+// TODO home - banner principal
+// TODO home - listar últimos posts
+// TODO Listar posts com páginação
+// TODO página de POST
 
 import React from "react"
-import { Link, graphql } from "gatsby"
+// import { graphql } from "gatsby"
 
 import SEO from "../features/Seo"
 import LayoutDefault from "../features/Layouts/LayoutDefault"
 
+import BannerPhoto from "../features/Components/BannerPhoto/BannerPhoto"
+
 export default ({ data }) => {
-  const posts = data.allMarkdownRemark.edges
+  //const posts = data.allMarkdownRemark.edges
 
   return (
     <LayoutDefault>
-      <SEO title="Home" description="breve descrição da página" />
-      <p>Home</p>
+      <SEO
+        title="Home"
+        description="Blog sobre tecnologia, videoaulas, dicas e curriculum de Jaison Schmidt - desenvolvedor front-end residente em Passo Fundo - RS - Brazil"
+      />
+      <BannerPhoto />
     </LayoutDefault>
   )
 }
 
+/*
 export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -42,3 +48,4 @@ export const query = graphql`
     }
   }
 `
+*/

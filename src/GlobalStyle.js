@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
-
 	/* http://meyerweb.com/eric/tools/css/reset/ 
 		v2.0 | 20110126
 		License: none (public domain)
@@ -19,6 +18,7 @@ export default createGlobalStyle`
 	figure, figcaption, footer, header, hgroup, 
 	menu, nav, output, ruby, section, summary,
 	time, mark, audio, video {
+		color: ${props => props.theme.text.color};
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -34,7 +34,7 @@ export default createGlobalStyle`
 		display: block;
 	}
 	html, body {
-		background: #f5f5f5;
+		background: ${props => props.theme.body.bg};
 		height: 100%;
 		line-height: 1;
 	}
@@ -54,7 +54,7 @@ export default createGlobalStyle`
 		border-spacing: 0;
 	}
 
-	#___gatsby, #gatsby-focus-wrapper {
+	#___gatsby, #gatsby-focus-wrapper, .tl-edges, .tl-wrapper {
 		height: 100%;
 	}
 `

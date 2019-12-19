@@ -6,15 +6,17 @@ export const LayoutDefault = styled.div`
   justify-content: space-between;
 `
 export const AsideWrapper = styled.div`
-  background: #fff;
+  background: ${props => props.theme.layout.sidebar};
   margin-right: 1rem;
-  width: 160px;
+  overflow: auto;
+  width: 260px;
 `
 
 export const ContentWrapper = styled.div`
-  background: #fff;
-  flex-grow: 1;
+  background: ${props => props.theme.layout.content};
+  width: 100%;
   overflow: auto;
+  position: relative;
 `
 
 export const AvatarWrapper = styled.div`
@@ -39,16 +41,16 @@ export const NavList = styled.ul``
 
 export const NavItem = styled.li`
   &:hover {
-    background-color: #fcfcfc;
+    background-color: ${props => props.theme.clickable.primary.hover};
   }
   &:last-of-type a {
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: ${props => props.theme.border.primary};
   }
 `
 
 export const NavLink = styled.a`
-  border-top: 1px solid #f5f5f5;
-  color: #333;
+  border-top: ${props => props.theme.border.primary};
+  color: ${props => props.theme.clickable.primary.color};
   display: block;
   font-size: 0.9rem;
   padding: 1rem;
@@ -57,7 +59,7 @@ export const NavLink = styled.a`
   text-decoration: none;
 
   &.active:before {
-    background: #ff714a;
+    background: ${props => props.theme.layout.highlight};
     content: " ";
     height: 100%;
     position: absolute;
@@ -93,4 +95,18 @@ export const ContactInfo = styled.address`
   font-size: 0.7rem;
   line-height: 1rem;
   text-align: center;
+`
+export const ThemeWrapper = styled.div`
+  padding: 1rem 0;
+  text-align: center;
+`
+export const BtnTheme = styled.button`
+  background: ${props => props.theme.body.bg};
+  border: transparent;
+  padding: 0.4rem 0.8rem;
+
+  > img {
+    height: 20px;
+    width: 20px;
+  }
 `

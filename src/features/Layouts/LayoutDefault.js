@@ -1,91 +1,109 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Helmet from "react-helmet"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { ThemeProvider } from "styled-components"
 
+import Config from "../../config"
 import GlobalStyle from "../../GlobalStyle"
 import * as S from "./LayoutDefaultStyles"
 
-import Avatar from "../../images/avatar.jpg"
 import FacebookIcon from "../../images/social/facebook.svg"
 import InstagramIcon from "../../images/social/instagram.svg"
 import LinkedinIcon from "../../images/social/linkedin.svg"
 import GithubIcon from "../../images/social/github.svg"
+import DarkIcon from "../../images/dark-icon.svg"
+import LightIcon from "../../images/light-icon.svg"
+
+import Avatar from "../Components/Avatar/Avatar"
 
 export default ({ children }) => {
+  let storageTheme = localStorage.getItem("jaisoncombr-lastTheme")
+
+  const [theme, setTheme] = useState(
+    storageTheme === null ? Config.themeDefault : parseInt(storageTheme)
+  )
+
+  useEffect(() => {
+    localStorage.setItem("jaisoncombr-lastTheme", theme)
+  }, [theme])
+
   return (
-    <S.LayoutDefault>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-      <S.AsideWrapper>
-        <S.AvatarWrapper>
-          <img src={Avatar} alt="foto de jaison schmidt" />
-        </S.AvatarWrapper>
-        <S.BlogTitle>Jaison Schmidt</S.BlogTitle>
+    <ThemeProvider theme={Config.themes[theme].scheme}>
+      <S.LayoutDefault>
+        <Helmet>
+          <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap"
+            rel="stylesheet"
+          />
+        </Helmet>
+        <S.AsideWrapper>
+          <S.AvatarWrapper>
+            <Avatar />
+          </S.AvatarWrapper>
 
-        <S.NavList role="navigation" aria-label="Menu Principal">
-          <S.NavItem>
-            <S.NavLink as={Link} to="/" activeClassName="active">
-              Home
-            </S.NavLink>
-          </S.NavItem>
-          <S.NavItem>
-            <S.NavLink as={Link} to="/videoaulas/" activeClassName="active">
-              Videoaulas
-            </S.NavLink>
-          </S.NavItem>
-          <S.NavItem>
-            <S.NavLink
-              as={Link}
-              to="/estudo-dirigido/"
-              activeClassName="active"
-            >
-              Estudo dirigido
-            </S.NavLink>
-          </S.NavItem>
-          <S.NavItem>
-            <S.NavLink as={Link} to="/notepad/" activeClassName="active">
-              Notepad
-            </S.NavLink>
-          </S.NavItem>
-          <S.NavItem>
-            <S.NavLink as={Link} to="/about/" activeClassName="active">
-              Sobre
-            </S.NavLink>
-          </S.NavItem>
-          <S.NavItem>
-            <S.NavLink as={Link} to="/contact/" activeClassName="active">
-              Contato
-            </S.NavLink>
-          </S.NavItem>
-        </S.NavList>
+          <S.BlogTitle>Jaison Schmidt</S.BlogTitle>
 
-        <S.SocialWrapper>
-          <S.SocialItem href="https://www.facebook.com/jaison.schmidt">
-            <img src={FacebookIcon} alt="icone facebook" />
-          </S.SocialItem>
-          <S.SocialItem href="https://www.instagram.com/jaisonschmidt/">
-            <img src={InstagramIcon} alt="icone instagram" />
-          </S.SocialItem>
-          <S.SocialItem href="https://www.linkedin.com/in/jaison-schmidt-19b80725/">
-            <img src={LinkedinIcon} alt="icone Linkedin" />
-          </S.SocialItem>
-          <S.SocialItem href="https://github.com/jaisonschmidt?tab=repositories">
-            <img src={GithubIcon} alt="icone github" />
-          </S.SocialItem>
-        </S.SocialWrapper>
+          <S.NavList role="navigation" aria-label="Menu Principal">
+            {Config.menuItens.map((item, i) => (
+              <S.NavItem key={i}>
+                <S.NavLink
+                  as={AniLink}
+                  paintDrip
+                  duration={0.4}
+                  hex="#f5f5f5"
+                  to={item.to}
+                  activeClassName="active"
+                >
+                  {item.label}
+                </S.NavLink>
+              </S.NavItem>
+            ))}
+          </S.NavList>
 
-        <S.ContactInfo>
-          <div>Fone: (54) 9 9977 66 48</div>
-          <div>Passo Fundo - RS</div>
-        </S.ContactInfo>
-      </S.AsideWrapper>
+          <S.SocialWrapper>
+            <S.SocialItem href="https://www.facebook.com/jaison.schmidt">
+              <img src={FacebookIcon} alt="icone facebook" />
+            </S.SocialItem>
+            <S.SocialItem href="https://www.instagram.com/jaisonschmidt/">
+              <img src={InstagramIcon} alt="icone instagram" />
+            </S.SocialItem>
+            <S.SocialItem href="https://www.linkedin.com/in/jaison-schmidt-19b80725/">
+              <img src={LinkedinIcon} alt="icone Linkedin" />
+            </S.SocialItem>
+            <S.SocialItem href="https://github.com/jaisonschmidt?tab=repositories">
+              <img src={GithubIcon} alt="icone github" />
+            </S.SocialItem>
+          </S.SocialWrapper>
 
-      <S.ContentWrapper>{children}</S.ContentWrapper>
-      <GlobalStyle />
-    </S.LayoutDefault>
+          <S.ContactInfo>
+            <div>Fone: (54) 9 9977 66 48</div>
+            <div>Passo Fundo - RS</div>
+          </S.ContactInfo>
+
+          <S.ThemeWrapper>
+            {theme === 0 && (
+              <S.BtnTheme
+                onClick={() => setTheme(1)}
+                title="Alterar para dark mode"
+              >
+                <img src={DarkIcon} alt="Dark mode" />
+              </S.BtnTheme>
+            )}
+
+            {theme === 1 && (
+              <S.BtnTheme
+                onClick={() => setTheme(0)}
+                title="Alterar para light mode"
+              >
+                <img src={LightIcon} alt="Light mode" />
+              </S.BtnTheme>
+            )}
+          </S.ThemeWrapper>
+        </S.AsideWrapper>
+
+        <S.ContentWrapper>{children}</S.ContentWrapper>
+        <GlobalStyle />
+      </S.LayoutDefault>
+    </ThemeProvider>
   )
 }

@@ -1,8 +1,4 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
@@ -34,6 +30,16 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: "images",
+      },
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     `gatsby-transformer-remark`,
+    `gatsby-plugin-transition-link`,
   ],
 }
