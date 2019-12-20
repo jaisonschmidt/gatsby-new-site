@@ -65,16 +65,16 @@ const Config = {
           primary: "1px solid rgba(0,0,0,0.2)",
         },
         body: {
-          bg: "rgb(45, 56, 60)",
+          bg: "#2d383c",
         },
         layout: {
-          sidebar: "rgb(25, 36, 40);",
-          content: "rgb(25, 36, 40);",
+          sidebar: "#192428",
+          content: "#192428",
           highlight: "#ff714a",
         },
         clickable: {
           primary: {
-            bg: "rgb(25, 36, 40);",
+            bg: "#192428",
             color: "#FFF",
             hover: "rgba(0, 0, 0, 0.2)",
           },

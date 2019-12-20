@@ -9,7 +9,7 @@ export const AsideWrapper = styled.div`
   background: ${props => props.theme.layout.sidebar};
   margin-right: 1rem;
   overflow: auto;
-  width: 260px;
+  width: 200px;
 `
 
 export const ContentWrapper = styled.div`

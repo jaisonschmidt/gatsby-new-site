@@ -50,7 +50,7 @@ export default ({ children }) => {
                   as={AniLink}
                   paintDrip
                   duration={0.4}
-                  hex="#f5f5f5"
+                  hex={Config.themes[theme].scheme.body.bg}
                   to={item.to}
                   activeClassName="active"
                 >
