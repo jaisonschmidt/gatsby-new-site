@@ -15,8 +15,8 @@ export default ({ data }) => {
     }
   `)
   return (
-    <div>
+    <>
       <Img fixed={noimage.childImageSharp.fixed} />
-    </div>
+    </>
   )
 }
