@@ -5,6 +5,7 @@ import SEO from "../features/Seo"
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  console.log(post)
   return (
     <LayoutDefault>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
@@ -23,6 +24,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      html
       excerpt
     }
   }

@@ -1,14 +1,27 @@
 import React from "react"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 import * as S from "./BannerPhotoStyles"
 
-import ImageBanner from "../../../images/img-home.jpg"
+// import ImageBanner from "../../../images/img-home.jpg"
 
 const BannerPhoto = () => {
+  const { ImagemPhoto } = useStaticQuery(graphql`
+    query {
+      ImagemPhoto: file(relativePath: { eq: "img-home.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 580) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <S.BannerWrapper>
       <S.ImageWrapper>
-        <img src={ImageBanner} width="100%" alt="imagem imbassai" />
+        <Img fluid={ImagemPhoto.childImageSharp.fluid} />
       </S.ImageWrapper>
       <S.TextWrapper>
         <S.TextContent>

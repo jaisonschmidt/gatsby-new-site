@@ -5,6 +5,7 @@ description: And I'm not sure about the universe.
 category: Misc
 background: "#7AAB13"
 type: blogpost
+image: "../../../static/assets/img/desert.jpg"
 ---
 
 # Lorem ipsum

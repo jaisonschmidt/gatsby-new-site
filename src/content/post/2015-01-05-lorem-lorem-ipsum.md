@@ -5,6 +5,7 @@ description: And I'm lorem sure lorem
 category: JS
 background: "#d6ba32"
 type: blogpost
+image: "../../../static/assets/img/desert.jpg"
 ---
 
 # Lorem ipsum

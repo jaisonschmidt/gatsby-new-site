@@ -5,6 +5,7 @@ description: So say goodbye to love and hold your head up high
 category: svg
 background: "#7d669e"
 type: blogpost
+image: "../../../static/assets/img/desert.jpg"
 ---
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [bibendum](http://google.com) eu pulvinar vel, sodales vitae dui.

@@ -1,19 +1,23 @@
 // https://lmpixels.com/demo/kerge-html/version-1/#about-me
 
-// TODO descobrir como usar uma imagem destaque no markdown e como tratar imagens em posts
+// TODO Adiconar Netlify CMS
 // TODO finalizar home
 
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import SEO from "../features/Seo"
 import LayoutDefault from "../features/Layouts/LayoutDefault"
 
 import BannerPhoto from "../features/Components/BannerPhoto/BannerPhoto"
 
-export default props => {
-  //const posts = props.data.allMarkdownRemark.edges
-  console.log(props)
+import Noimage from "../features/Components/Noimage/Noimage"
+
+export default ({ data }) => {
+  const posts = data.posts.edges
+
+  console.log(posts)
 
   return (
     <LayoutDefault>
@@ -22,6 +26,18 @@ export default props => {
         description="Blog sobre tecnologia, videoaulas, dicas e curriculum de Jaison Schmidt - desenvolvedor front-end residente em Passo Fundo - RS - Brazil"
       />
       <BannerPhoto />
+
+      {posts.map(post => (
+        <div key={post.node.id}>
+          {post.node.frontmatter.image && (
+            <Img fixed={post.node.frontmatter.image.childImageSharp.fixed} />
+          )}
+
+          {!post.node.frontmatter.image && <Noimage />}
+
+          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
+        </div>
+      ))}
     </LayoutDefault>
   )
 }
@@ -40,6 +56,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
+            image {
+              childImageSharp {
+                fixed(width: 90, height: 90) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug
@@ -60,6 +83,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
+            image {
+              childImageSharp {
+                fixed(width: 90, height: 90) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug
@@ -80,6 +110,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
+            image {
+              childImageSharp {
+                fixed(width: 90, height: 90) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug

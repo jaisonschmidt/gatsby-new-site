@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const LayoutDefault = styled.div`
+  color: ${props => props.theme.text.color};
   display: flex;
   height: 100%;
   justify-content: space-between;
