@@ -1,23 +1,25 @@
 // https://lmpixels.com/demo/kerge-html/version-1/#about-me
 
-// TODO Adiconar Netlify CMS
 // TODO finalizar home
+// TODO criar listagem de POSTS
+// TODO criar listagem de Notepad
+// TODO criar
+// TODO Adiconar Netlify CMS
 
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 import SEO from "../features/Seo"
 import LayoutDefault from "../features/Layouts/LayoutDefault"
 
 import BannerPhoto from "../features/Components/BannerPhoto/BannerPhoto"
+import PostList from "../features/Components/PostList/PostList"
 
-import Noimage from "../features/Components/Noimage/Noimage"
+import * as S from "../features/Styled/GlobalComponents.js"
 
 export default ({ data }) => {
   const posts = data.posts.edges
-
-  console.log(posts)
+  const notepad = data.notepad.edges
 
   return (
     <LayoutDefault>
@@ -25,19 +27,20 @@ export default ({ data }) => {
         title="Home"
         description="Blog sobre tecnologia, videoaulas, dicas e curriculum de Jaison Schmidt - desenvolvedor front-end residente em Passo Fundo - RS - Brazil"
       />
+
       <BannerPhoto />
 
-      {posts.map(post => (
-        <div key={post.node.id}>
-          {post.node.frontmatter.image && (
-            <Img fixed={post.node.frontmatter.image.childImageSharp.fixed} />
-          )}
+      <S.Section>
+        <S.Title marginTop="2rem" marginBottom="2rem">
+          Posts mais recentes
+        </S.Title>
+        <PostList posts={posts} />
+      </S.Section>
 
-          {!post.node.frontmatter.image && <Noimage />}
-
-          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
-        </div>
-      ))}
+      <S.Section>
+        <S.Title marginBottom="2rem">Notepad</S.Title>
+        <PostList posts={notepad} />
+      </S.Section>
     </LayoutDefault>
   )
 }
@@ -46,7 +49,7 @@ export const query = graphql`
   query {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 4
+      limit: 2
       filter: { frontmatter: { type: { eq: "blogpost" } } }
     ) {
       totalCount
@@ -55,6 +58,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            description
             date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
             image {
               childImageSharp {
@@ -73,7 +77,7 @@ export const query = graphql`
     }
     notepad: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 4
+      limit: 2
       filter: { frontmatter: { type: { eq: "notepad" } } }
     ) {
       totalCount
@@ -82,6 +86,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            description
             date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
             image {
               childImageSharp {
@@ -109,6 +114,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            description
             date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
             image {
               childImageSharp {

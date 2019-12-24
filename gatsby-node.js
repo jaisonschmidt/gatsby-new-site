@@ -7,13 +7,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `posts` })
 
-    console.log(slug)
+    // console.log(slug)
 
-    let tmpSlug = slug.replace("/post/", "")
-    tmpSlug = tmpSlug.replace("/estudodirigido/", "")
-    tmpSlug = tmpSlug.replace("/notepad/", "")
+    let tmpSlug = slug.replace("post--", "")
+    tmpSlug = tmpSlug.replace("estudodirigido--", "")
+    tmpSlug = tmpSlug.replace("notepad--", "")
 
-    console.log(tmpSlug)
+    // console.log(tmpSlug)
 
     createNodeField({
       node,

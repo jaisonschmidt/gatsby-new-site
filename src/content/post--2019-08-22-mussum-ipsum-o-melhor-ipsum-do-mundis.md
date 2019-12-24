@@ -5,7 +5,10 @@ date: "2019-08-22 08:51:23"
 category: jekyll
 background: "#B31917"
 type: blogpost
----## Mussum Ipsum o melhor ipsum do mundis
+image: "../../static/assets/img/desert.jpg"
+---
+
+## Mussum Ipsum o melhor ipsum do mundis
 
 Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Paisis, filhis, espiritis santis. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Copo furadis é disculpa de bebadis, arcu quam euismod magna.
 

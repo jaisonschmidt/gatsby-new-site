@@ -5,10 +5,7 @@ import SEO from "../features/Seo"
 
 export default () => (
   <LayoutDefault>
-    <SEO
-      title="Videoaulas"
-      description="Videoaulas e cursos gratuitos para programação, criação de sites e desenvolvimento web"
-    />
+    <SEO title="Videoaulas" description="página de about jesus maria josé" />
     <p>Videoaulas</p>
   </LayoutDefault>
 )

@@ -9,8 +9,8 @@ const Config = {
       to: "/videoaulas/",
     },
     {
-      label: "Estudo dirigido",
-      to: "/estudo-dirigido/",
+      label: "Blog",
+      to: "/blog/",
     },
     {
       label: "Notepad",
@@ -20,17 +20,13 @@ const Config = {
       label: "Sobre",
       to: "/sobre/",
     },
-    {
-      label: "Contato",
-      to: "/contato/",
-    },
   ],
   themes: [
     {
       label: "Light",
       scheme: {
         text: {
-          color: "#000",
+          color: "#333",
         },
         border: {
           primary: "1px solid #f5f5f5",
@@ -62,7 +58,7 @@ const Config = {
           color: "#FFF",
         },
         border: {
-          primary: "1px solid rgba(0,0,0,0.2)",
+          primary: "1px solid rgba(255,255,255,0.1)",
         },
         body: {
           bg: "#2d383c",
