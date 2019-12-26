@@ -1,23 +1,45 @@
 import styled from "styled-components"
+import media from "styled-media-query"
 
 export const LayoutDefault = styled.div`
   color: ${props => props.theme.text.color};
   display: flex;
   height: 100%;
   justify-content: space-between;
+
+  ${media.lessThan("medium")`
+    flex-direction: column;
+  `}
 `
 export const AsideWrapper = styled.div`
   background: ${props => props.theme.layout.sidebar};
   margin-right: 1rem;
   overflow: auto;
   width: 200px;
+
+  ${media.lessThan("medium")`
+    margin-right: 0;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  `}
 `
 
 export const ContentWrapper = styled.div`
   background: ${props => props.theme.layout.content};
-  width: 100%;
+  padding-bottom: 4rem;
   overflow: auto;
   position: relative;
+  width: 100%;
+
+  ${media.lessThan("medium")`
+    overflow: initial;
+    width: 100%;
+  `}
 `
 
 export const AvatarWrapper = styled.div`
@@ -110,4 +132,22 @@ export const BtnTheme = styled.button`
     height: 20px;
     width: 20px;
   }
+`
+
+export const ContentBurger = styled.div`
+  ${media.lessThan("medium")`
+    display: none;
+  `}
+
+  &.active {
+    display: flex;
+  }
+`
+
+export const MenuBurger = styled.div`
+  display: none;
+
+  ${media.lessThan("medium")`
+    display: block;
+  `}
 `

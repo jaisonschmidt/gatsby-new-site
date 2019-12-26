@@ -27,6 +27,7 @@ const Config = {
       scheme: {
         text: {
           color: "#333",
+          colorInverse: "#FFF",
         },
         border: {
           primary: "1px solid #f5f5f5",
@@ -56,6 +57,7 @@ const Config = {
       scheme: {
         text: {
           color: "#FFF",
+          colorInverse: "#000",
         },
         border: {
           primary: "1px solid rgba(255,255,255,0.1)",

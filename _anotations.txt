@@ -1,9 +1,2 @@
-{posts.map((post, i) => (
-        <div key={i}>
-          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
-          <div>{post.node.frontmatter.date}</div>
-        </div>
-      ))}
-
 Inserir imagem  destaque
 https://dennytek.com/blog/personal-site-with-gatsby-part-5

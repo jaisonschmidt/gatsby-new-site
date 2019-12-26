@@ -14,6 +14,10 @@ const PostBox = props => {
         <S.PostDescription>
           {post.node.frontmatter.description}
         </S.PostDescription>
+        <S.TimeToReadWrapper>
+          {post.node.frontmatter.date} - Leia em {post.node.timeToRead} minuto
+          {post.node.timeToRead > 1 && "s"}
+        </S.TimeToReadWrapper>
       </S.TitleWrapper>
       <S.ImageWrapper>
         {post.node.frontmatter.image && (

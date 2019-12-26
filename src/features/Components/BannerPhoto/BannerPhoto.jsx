@@ -3,6 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import * as S from "./BannerPhotoStyles"
+import * as G from "../../Styled/GlobalComponents"
 
 // import ImageBanner from "../../../images/img-home.jpg"
 
@@ -40,6 +41,15 @@ const BannerPhoto = () => {
               Aproveite para assistir algumas videoaulas ou realizar os estudos
               dirigidos. Caso tenha alguma sugestão ou dúvida basta entrar em
               contato!
+            </p>
+            <p>
+              <G.Btn
+                href="https://www.linkedin.com/in/jaison-schmidt-19b80725/"
+                target="_blank"
+                marginTop="2rem"
+              >
+                Curriculum
+              </G.Btn>
             </p>
           </div>
         </S.TextContent>

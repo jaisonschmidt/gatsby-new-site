@@ -1,9 +1,9 @@
 // https://lmpixels.com/demo/kerge-html/version-1/#about-me
 
-// TODO finalizar home
+// TODO ajustar responsividade
 // TODO criar listagem de POSTS
 // TODO criar listagem de Notepad
-// TODO criar
+// TODO criar about
 // TODO Adiconar Netlify CMS
 
 import React from "react"
@@ -59,7 +59,7 @@ export const query = graphql`
           frontmatter {
             title
             description
-            date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
+            date(formatString: "DD MMMM, YYYY", locale: "pt-br")
             image {
               childImageSharp {
                 fixed(width: 90, height: 90) {
@@ -72,6 +72,7 @@ export const query = graphql`
             slug
           }
           excerpt
+          timeToRead
         }
       }
     }
@@ -87,7 +88,7 @@ export const query = graphql`
           frontmatter {
             title
             description
-            date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
+            date(formatString: "DD MMMM, YYYY", locale: "pt-br")
             image {
               childImageSharp {
                 fixed(width: 90, height: 90) {
@@ -100,34 +101,7 @@ export const query = graphql`
             slug
           }
           excerpt
-        }
-      }
-    }
-    estudodirigido: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 4
-      filter: { frontmatter: { type: { eq: "estudodirigido" } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            description
-            date(formatString: "DD MMMM, YYYY - HH:MM", locale: "pt-br")
-            image {
-              childImageSharp {
-                fixed(width: 90, height: 90) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt
+          timeToRead
         }
       }
     }

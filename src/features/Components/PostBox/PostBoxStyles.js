@@ -1,10 +1,15 @@
 import styled from "styled-components"
+import media from "styled-media-query"
 
 export const PostBoxWrapper = styled.div`
   color: ${props => props.theme.text.color};
   position: relative;
   text-decoration: none;
   width: 48%;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
 `
 
 export const TitleWrapper = styled.div`
@@ -18,6 +23,7 @@ export const TitleWrapper = styled.div`
 `
 
 export const ImageWrapper = styled.div`
+  position: relative;
   > div {
     border-radius: 50%;
     position: absolute;
@@ -34,4 +40,8 @@ export const PostTitle = styled.div`
 export const PostDescription = styled.div`
   font-size: 0.7rem;
   font-style: italic;
+`
+export const TimeToReadWrapper = styled.div`
+  font-size: 0.6rem;
+  padding-top: 1rem;
 `
