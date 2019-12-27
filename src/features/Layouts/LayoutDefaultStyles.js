@@ -39,6 +39,7 @@ export const ContentWrapper = styled.div`
 
 export const AvatarWrapper = styled.div`
   margin: 20px auto;
+  margin-bottom: 0;
   text-align: center;
 
   > img {
@@ -51,7 +52,7 @@ export const BlogTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.8rem;
-  margin-bottom: 2rem;
+  padding: 1rem 0;
   text-align: center;
 `
 
