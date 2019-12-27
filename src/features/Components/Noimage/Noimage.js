@@ -16,7 +16,7 @@ export default ({ data }) => {
   `)
   return (
     <>
-      <Img fixed={noimage.childImageSharp.fixed} />
+      <Img fixed={noimage.childImageSharp.fixed} alt="sem imagem cadastrada" />
     </>
   )
 }

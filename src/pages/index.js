@@ -1,6 +1,5 @@
 // https://lmpixels.com/demo/kerge-html/version-1/#about-me
 
-// TODO Adiconar Netlify CMS
 // TODO cadastrar conteúdos
 
 import React from "react"

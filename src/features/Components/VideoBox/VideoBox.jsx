@@ -7,7 +7,10 @@ const VideoBox = ({ video }) => {
   console.log(video)
   return (
     <S.VideoBoxWrapper href={video.link} target="_blank">
-      <Img fluid={video.img.childImageSharp.fluid}></Img>
+      <Img
+        fluid={video.img.childImageSharp.fluid}
+        alt={`imagem para o curso de ${video.title}`}
+      ></Img>
       <S.CourseTitle className="coursetitle">{video.title}</S.CourseTitle>
     </S.VideoBoxWrapper>
   )

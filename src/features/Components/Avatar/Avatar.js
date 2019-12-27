@@ -16,7 +16,7 @@ export default ({ data }) => {
   `)
   return (
     <div>
-      <Img fixed={avatar.childImageSharp.fixed} />
+      <Img fixed={avatar.childImageSharp.fixed} alt="foto de Jaison Schmidt" />
     </div>
   )
 }

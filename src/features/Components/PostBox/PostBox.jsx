@@ -21,7 +21,10 @@ const PostBox = props => {
       </S.TitleWrapper>
       <S.ImageWrapper>
         {post.node.frontmatter.image && (
-          <Img fixed={post.node.frontmatter.image.childImageSharp.fixed} />
+          <Img
+            fixed={post.node.frontmatter.image.childImageSharp.fixed}
+            alt={`imagem do post ${post.node.frontmatter.title}`}
+          />
         )}
 
         {!post.node.frontmatter.image && <Noimage />}
