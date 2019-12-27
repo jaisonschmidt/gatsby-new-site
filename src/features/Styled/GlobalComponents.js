@@ -31,3 +31,9 @@ export const Title = styled.h2`
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)};
   padding: 0.5rem 0;
 `
+export const PageDescription = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+`

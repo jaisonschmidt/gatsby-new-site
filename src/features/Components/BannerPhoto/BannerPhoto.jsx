@@ -42,15 +42,13 @@ const BannerPhoto = () => {
               dirigidos. Caso tenha alguma sugestão ou dúvida basta entrar em
               contato!
             </p>
-            <p>
-              <G.Btn
-                href="https://www.linkedin.com/in/jaison-schmidt-19b80725/"
-                target="_blank"
-                marginTop="2rem"
-              >
-                Curriculum
-              </G.Btn>
-            </p>
+            <G.Btn
+              href="https://www.linkedin.com/in/jaison-schmidt-19b80725/"
+              target="_blank"
+              marginTop="2rem"
+            >
+              Curriculum
+            </G.Btn>
           </div>
         </S.TextContent>
       </S.TextWrapper>

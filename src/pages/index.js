@@ -1,10 +1,7 @@
 // https://lmpixels.com/demo/kerge-html/version-1/#about-me
 
-// TODO ajustar responsividade
-// TODO criar listagem de POSTS
-// TODO criar listagem de Notepad
-// TODO criar about
 // TODO Adiconar Netlify CMS
+// TODO cadastrar conteúdos
 
 import React from "react"
 import { graphql } from "gatsby"

@@ -49,6 +49,7 @@ export const TextContent = styled.div`
   .ptext {
     font-size: 0.85rem;
     line-height: 1.2rem;
+    margin-bottom: 0;
     padding-top: 1rem;
     text-align: justify;
 

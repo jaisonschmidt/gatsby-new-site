@@ -19,13 +19,8 @@ export const AsideWrapper = styled.div`
 
   ${media.lessThan("medium")`
     margin-right: 0;
-    max-height: 100%;
-    overflow: auto;
-    position: fixed;
-    right: 0;
-    top: 0;
+    overflow: initial;
     width: 100%;
-    z-index: 10;
   `}
 `
 
@@ -116,7 +111,7 @@ export const SocialItem = styled.a`
 
 export const ContactInfo = styled.address`
   font-size: 0.7rem;
-  line-height: 1rem;
+  line-height: 1.4rem;
   text-align: center;
 `
 export const ThemeWrapper = styled.div`
@@ -126,28 +121,11 @@ export const ThemeWrapper = styled.div`
 export const BtnTheme = styled.button`
   background: ${props => props.theme.body.bg};
   border: transparent;
-  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
 
   > img {
     height: 20px;
     width: 20px;
   }
-`
-
-export const ContentBurger = styled.div`
-  ${media.lessThan("medium")`
-    display: none;
-  `}
-
-  &.active {
-    display: flex;
-  }
-`
-
-export const MenuBurger = styled.div`
-  display: none;
-
-  ${media.lessThan("medium")`
-    display: block;
-  `}
 `

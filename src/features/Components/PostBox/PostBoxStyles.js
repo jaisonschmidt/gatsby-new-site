@@ -10,6 +10,11 @@ export const PostBoxWrapper = styled.div`
   ${media.lessThan("medium")`
     width: 100%;
   `}
+
+  &:hover .titlewrapper {
+    background: ${props => props.theme.layout.highlight};
+    color: ${props => props.theme.text.colorInverse};
+  }
 `
 
 export const TitleWrapper = styled.div`
@@ -20,6 +25,7 @@ export const TitleWrapper = styled.div`
   margin-left: 3rem;
   padding: 1rem;
   padding-left: 3rem;
+  transition: all ease 0.5s;
 `
 
 export const ImageWrapper = styled.div`

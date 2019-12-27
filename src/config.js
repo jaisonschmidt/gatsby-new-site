@@ -18,7 +18,7 @@ const Config = {
     },
     {
       label: "Sobre",
-      to: "/sobre/",
+      to: "/about/",
     },
   ],
   themes: [

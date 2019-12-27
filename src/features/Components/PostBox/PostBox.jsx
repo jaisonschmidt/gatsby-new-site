@@ -9,7 +9,7 @@ const PostBox = props => {
   const { post } = props
   return (
     <S.PostBoxWrapper as={Link} to={post.node.fields.slug} key={post.node.id}>
-      <S.TitleWrapper>
+      <S.TitleWrapper className="titlewrapper">
         <S.PostTitle>{post.node.frontmatter.title}</S.PostTitle>
         <S.PostDescription>
           {post.node.frontmatter.description}

@@ -37,75 +37,82 @@ export default ({ children }) => {
           />
         </Helmet>
         <S.AsideWrapper>
-          <S.MenuBurger>Burger</S.MenuBurger>
+          <S.AvatarWrapper>
+            <Avatar />
+          </S.AvatarWrapper>
 
-          <S.ContentBurger>
-            <S.AvatarWrapper>
-              <Avatar />
-            </S.AvatarWrapper>
+          <S.BlogTitle>Jaison Schmidt</S.BlogTitle>
 
-            <S.BlogTitle>Jaison Schmidt</S.BlogTitle>
+          <S.NavList role="navigation" aria-label="Menu Principal">
+            {Config.menuItens.map((item, i) => (
+              <S.NavItem key={i}>
+                <S.NavLink
+                  trigger={async pages => {
+                    setTimeout(function() {
+                      var element = document.querySelector("#teste")
 
-            <S.NavList role="navigation" aria-label="Menu Principal">
-              {Config.menuItens.map((item, i) => (
-                <S.NavItem key={i}>
-                  <S.NavLink
-                    as={AniLink}
-                    paintDrip
-                    duration={0.4}
-                    hex={Config.themes[theme].scheme.body.bg}
-                    to={item.to}
-                    activeClassName="active"
-                  >
-                    {item.label}
-                  </S.NavLink>
-                </S.NavItem>
-              ))}
-            </S.NavList>
-
-            <S.SocialWrapper>
-              <S.SocialItem href="https://www.facebook.com/jaison.schmidt">
-                <img src={FacebookIcon} alt="icone facebook" />
-              </S.SocialItem>
-              <S.SocialItem href="https://www.instagram.com/jaisonschmidt/">
-                <img src={InstagramIcon} alt="icone instagram" />
-              </S.SocialItem>
-              <S.SocialItem href="https://www.linkedin.com/in/jaison-schmidt-19b80725/">
-                <img src={LinkedinIcon} alt="icone Linkedin" />
-              </S.SocialItem>
-              <S.SocialItem href="https://github.com/jaisonschmidt?tab=repositories">
-                <img src={GithubIcon} alt="icone github" />
-              </S.SocialItem>
-            </S.SocialWrapper>
-
-            <S.ContactInfo>
-              <div>Fone: (54) 9 9977 66 48</div>
-              <div>Passo Fundo - RS</div>
-            </S.ContactInfo>
-
-            <S.ThemeWrapper>
-              {theme === 0 && (
-                <S.BtnTheme
-                  onClick={() => setTheme(1)}
-                  title="Alterar para dark mode"
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      })
+                    }, 500)
+                  }}
+                  as={AniLink}
+                  paintDrip
+                  duration={0.4}
+                  hex={Config.themes[theme].scheme.body.bg}
+                  to={item.to}
+                  activeClassName="active"
                 >
-                  <img src={DarkIcon} alt="Dark mode" />
-                </S.BtnTheme>
-              )}
+                  {item.label}
+                </S.NavLink>
+              </S.NavItem>
+            ))}
+          </S.NavList>
 
-              {theme === 1 && (
-                <S.BtnTheme
-                  onClick={() => setTheme(0)}
-                  title="Alterar para light mode"
-                >
-                  <img src={LightIcon} alt="Light mode" />
-                </S.BtnTheme>
-              )}
-            </S.ThemeWrapper>
-          </S.ContentBurger>
+          <S.SocialWrapper>
+            <S.SocialItem href="https://www.facebook.com/jaison.schmidt">
+              <img src={FacebookIcon} alt="icone facebook" />
+            </S.SocialItem>
+            <S.SocialItem href="https://www.instagram.com/jaisonschmidt/">
+              <img src={InstagramIcon} alt="icone instagram" />
+            </S.SocialItem>
+            <S.SocialItem href="https://www.linkedin.com/in/jaison-schmidt-19b80725/">
+              <img src={LinkedinIcon} alt="icone Linkedin" />
+            </S.SocialItem>
+            <S.SocialItem href="https://github.com/jaisonschmidt?tab=repositories">
+              <img src={GithubIcon} alt="icone github" />
+            </S.SocialItem>
+          </S.SocialWrapper>
+
+          <S.ContactInfo>
+            <div>Fone: (54) 9 9977 66 48</div>
+            <div>E-mail: eu@jaison.com.br</div>
+            <div>Passo Fundo - RS</div>
+          </S.ContactInfo>
+
+          <S.ThemeWrapper>
+            {theme === 0 && (
+              <S.BtnTheme
+                onClick={() => setTheme(1)}
+                title="Alterar para dark mode"
+              >
+                <img src={DarkIcon} alt="Dark mode" />
+              </S.BtnTheme>
+            )}
+
+            {theme === 1 && (
+              <S.BtnTheme
+                onClick={() => setTheme(0)}
+                title="Alterar para light mode"
+              >
+                <img src={LightIcon} alt="Light mode" />
+              </S.BtnTheme>
+            )}
+          </S.ThemeWrapper>
         </S.AsideWrapper>
 
-        <S.ContentWrapper>{children}</S.ContentWrapper>
+        <S.ContentWrapper id="teste">{children}</S.ContentWrapper>
         <GlobalStyle />
       </S.LayoutDefault>
     </ThemeProvider>
