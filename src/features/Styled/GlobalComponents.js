@@ -5,6 +5,7 @@ export const Btn = styled.a`
   color: ${props => props.theme.text.color};
   cursor: pointer;
   display: inline-block;
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : 0)};
   margin-top: ${props => (props.marginTop ? props.marginTop : 0)};
   padding: 1rem 1.5rem;
   transition: all ease 0.5s;

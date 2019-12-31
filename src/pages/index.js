@@ -31,11 +31,13 @@ export default ({ data }) => {
           Posts mais recentes
         </S.Title>
         <PostList posts={posts} />
+        <S.Btn marginBottom="4rem">Todos os posts</S.Btn>
       </S.Section>
 
       <S.Section>
         <S.Title marginBottom="2rem">Notepad</S.Title>
         <PostList posts={notepad} />
+        <S.Btn>Todos os notepads</S.Btn>
       </S.Section>
     </LayoutDefault>
   )
@@ -46,7 +48,7 @@ export const query = graphql`
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 2
-      filter: { frontmatter: { type: { eq: "blogpost" } } }
+      filter: { frontmatter: { type: { eq: "post" } } }
     ) {
       totalCount
       edges {

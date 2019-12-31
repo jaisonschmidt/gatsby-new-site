@@ -5,10 +5,6 @@ const Config = {
       to: "/",
     },
     {
-      label: "Videoaulas",
-      to: "/videoaulas/",
-    },
-    {
       label: "Blog",
       to: "/blog/",
     },

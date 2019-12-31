@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/${tmpSlug.slice(11)}`,
+      value: `/${tmpSlug.slice(12)}`,
     })
 
     fmImagesToRelative(node)

@@ -1,11 +1,13 @@
 ---
 date: 2015-09-08 17:01:44
 title: Moqups - ferramenta para criação e compartilhamento de wireframes
-description: Procurando uma ferramenta para desenhar e compartilhar Wireframes Conheça o Moqups!
+description: Procurando uma ferramenta para desenhar e compartilhar Wireframes? Conheça o Moqups!
 category: Ferramentas
-type: blogpost
+type: post
 image: "../../static/assets/img/September2015/01-moqups.jpg"
 ---
+
+**Procurando uma ferramenta para desenhar e compartilhar Wireframes? Conheça o Moqups!**
 
 **Wireframes, protótipos de telas, esboços e mockups**, estes são recursos interessantes para que desenvolvedores e analistas se entendam no resultado final das telas. Neste contexto temos o **Moqups**, um aplicativo feito em HTML5 e disponível online e com planos gratuítos.
 

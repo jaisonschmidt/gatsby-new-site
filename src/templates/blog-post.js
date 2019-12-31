@@ -12,7 +12,10 @@ export default props => {
   console.log(props)
   return (
     <LayoutDefault>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+      />
       <S.BlogPostWrapper>
         <G.Btn onClick={() => window.history.back()} marginTop="1rem">
           Voltar

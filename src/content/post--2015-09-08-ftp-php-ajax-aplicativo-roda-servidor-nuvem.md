@@ -1,9 +1,9 @@
 ---
-date: 2015-09-08 17:01:44
+date: 2015-09-08 17:24:21
 title: MonstaFTP - aplicativo de FTP feito em PHP que roda direto em seu servidor na nuvem
-description: MonstaFTP é um software de FTP online, ou seja, sem a necessidade de instalar!
+description: Conheça o MonstaFTP, um sistema de FTP online.
 category: Ferramentas
-type: blogpost
+type: post
 image: "../../static/assets/img/September2015/02-monstaFTP.jpg"
 ---
 

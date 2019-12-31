@@ -24,7 +24,8 @@ export default ({ children }) => {
   )
 
   useEffect(() => {
-    localStorage.setItem("jaisoncombr-lastTheme", theme)
+    typeof window !== "undefined" &&
+      window.localStorage.setItem("jaisoncombr-lastTheme", theme)
   }, [theme])
 
   return (
