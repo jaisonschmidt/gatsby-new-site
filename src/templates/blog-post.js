@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import LayoutDefault from "../features/Layouts/LayoutDefault"
 import SEO from "../features/Seo"
@@ -17,6 +18,9 @@ export default props => {
           Voltar
         </G.Btn>
         <h1>{post.frontmatter.title}</h1>
+        <S.ImageWrapper>
+          <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+        </S.ImageWrapper>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <G.Btn onClick={() => window.history.back()} marginTop="1rem">
           Voltar
@@ -32,6 +36,13 @@ export const query = graphql`
       html
       frontmatter {
         title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 580) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       html
       excerpt
