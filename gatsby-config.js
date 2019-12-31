@@ -76,6 +76,7 @@ module.exports = {
         pageTransitionDelay: 1000,
       },
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-transition-link`,
   ],
 }
