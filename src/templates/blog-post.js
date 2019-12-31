@@ -22,7 +22,10 @@ export default props => {
         </G.Btn>
         <h1>{post.frontmatter.title}</h1>
         <S.ImageWrapper>
-          <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+          <Img
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+            alt={`imagem principal do post ${post.frontmatter.title}`}
+          />
         </S.ImageWrapper>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <G.Btn onClick={() => window.history.back()} marginTop="1rem">

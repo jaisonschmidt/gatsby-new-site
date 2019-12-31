@@ -68,6 +68,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-10269125-16",
+        head: false,
+        pageTransitionDelay: 1000,
+      },
+    },
     `gatsby-plugin-transition-link`,
   ],
 }

@@ -22,7 +22,10 @@ const BannerPhoto = () => {
   return (
     <S.BannerWrapper>
       <S.ImageWrapper>
-        <Img fluid={ImagemPhoto.childImageSharp.fluid} />
+        <Img
+          fluid={ImagemPhoto.childImageSharp.fluid}
+          alt="foto de praia joão pessoa"
+        />
       </S.ImageWrapper>
       <S.TextWrapper>
         <S.TextContent>
@@ -46,6 +49,7 @@ const BannerPhoto = () => {
               href="https://www.linkedin.com/in/jaison-schmidt-19b80725/"
               target="_blank"
               marginTop="2rem"
+              rel="noreferrer"
             >
               Curriculum
             </G.Btn>

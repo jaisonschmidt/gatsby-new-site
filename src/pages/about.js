@@ -54,6 +54,7 @@ export default () => (
         <S.Btn
           href="https://www.linkedin.com/in/jaison-schmidt-19b80725/"
           target="_blank"
+          rel="noreferrer"
         >
           Acesse meu Linkedin
         </S.Btn>

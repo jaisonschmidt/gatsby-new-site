@@ -1,8 +1,5 @@
-// https://lmpixels.com/demo/kerge-html/version-1/#about-me
-
-// TODO cadastrar conteúdos
-
 import React from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { graphql } from "gatsby"
 
 import SEO from "../features/Seo"
@@ -31,13 +28,17 @@ export default ({ data }) => {
           Posts mais recentes
         </S.Title>
         <PostList posts={posts} />
-        <S.Btn marginBottom="4rem">Todos os posts</S.Btn>
+        <S.Btn as={AniLink} to="/blog/" marginBottom="4rem">
+          Todos os posts
+        </S.Btn>
       </S.Section>
 
       <S.Section>
         <S.Title marginBottom="2rem">Notepad</S.Title>
         <PostList posts={notepad} />
-        <S.Btn>Todos os notepads</S.Btn>
+        <S.Btn as={AniLink} to="/notepad/">
+          Todos os notepads
+        </S.Btn>
       </S.Section>
     </LayoutDefault>
   )

@@ -17,15 +17,18 @@ import LightIcon from "../../images/light-icon.svg"
 import Avatar from "../Components/Avatar/Avatar"
 
 export default ({ children }) => {
-  let storageTheme = localStorage.getItem("jaisoncombr-lastTheme")
+  let storageTheme = 0
+
+  if (typeof localStorage != "undefined") {
+    storageTheme = localStorage.getItem("jaisoncombr-lastTheme")
+  }
 
   const [theme, setTheme] = useState(
     storageTheme === null ? Config.themeDefault : parseInt(storageTheme)
   )
 
   useEffect(() => {
-    typeof window !== "undefined" &&
-      window.localStorage.setItem("jaisoncombr-lastTheme", theme)
+    localStorage.setItem("jaisoncombr-lastTheme", theme)
   }, [theme])
 
   return (
@@ -44,7 +47,7 @@ export default ({ children }) => {
 
           <S.BlogTitle>Jaison Schmidt</S.BlogTitle>
 
-          <S.NavList role="navigation" aria-label="Menu Principal">
+          <ul role="navigation" aria-label="Menu Principal">
             {Config.menuItens.map((item, i) => (
               <S.NavItem key={i}>
                 <S.NavLink
@@ -69,7 +72,7 @@ export default ({ children }) => {
                 </S.NavLink>
               </S.NavItem>
             ))}
-          </S.NavList>
+          </ul>
 
           <S.SocialWrapper>
             <S.SocialItem href="https://www.facebook.com/jaison.schmidt">
