@@ -77,6 +77,17 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: [`300`, `600`],
+          },
+        ],
+      },
+    },
     `gatsby-plugin-transition-link`,
   ],
 }

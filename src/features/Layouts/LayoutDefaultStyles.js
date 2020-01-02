@@ -56,9 +56,9 @@ export const BlogTitle = styled.h1`
   text-align: center;
 `
 
-export const NavList = styled.ul``
+export const NavList = styled.nav``
 
-export const NavItem = styled.li`
+export const NavItem = styled.div`
   &:hover {
     background-color: ${props => props.theme.clickable.primary.hover};
   }

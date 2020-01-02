@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Helmet from "react-helmet"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { ThemeProvider } from "styled-components"
 
@@ -34,12 +33,6 @@ export default ({ children }) => {
   return (
     <ThemeProvider theme={Config.themes[theme].scheme}>
       <S.LayoutDefault>
-        <Helmet>
-          <link
-            href="https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap"
-            rel="stylesheet"
-          />
-        </Helmet>
         <S.AsideWrapper>
           <S.AvatarWrapper>
             <Avatar />
@@ -47,7 +40,7 @@ export default ({ children }) => {
 
           <S.BlogTitle>Jaison Schmidt</S.BlogTitle>
 
-          <ul role="navigation" aria-label="Menu Principal">
+          <S.NavList role="navigation" aria-label="Menu Principal">
             {Config.menuItens.map((item, i) => (
               <S.NavItem key={i}>
                 <S.NavLink
@@ -72,7 +65,7 @@ export default ({ children }) => {
                 </S.NavLink>
               </S.NavItem>
             ))}
-          </ul>
+          </S.NavList>
 
           <S.SocialWrapper>
             <S.SocialItem href="https://www.facebook.com/jaison.schmidt">
