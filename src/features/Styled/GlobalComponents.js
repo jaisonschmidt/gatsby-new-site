@@ -11,10 +11,18 @@ export const Btn = styled.a`
   transition: all ease 0.5s;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &.active {
     background: ${props => props.theme.layout.highlight};
     color: ${props => props.theme.text.colorInverse};
   }
+`
+
+export const BtnMini = styled(Btn)`
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
 `
 
 export const Section = styled.section`
