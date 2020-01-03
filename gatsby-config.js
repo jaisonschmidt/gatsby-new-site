@@ -87,7 +87,6 @@ module.exports = {
         trackingId: "UA-10269125-16",
       },
     },
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-transition-link`,
   ],
 }
